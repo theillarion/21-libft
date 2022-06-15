@@ -20,6 +20,8 @@ OBJS_B_D		=	${SRCS_B:%.c=%_debug.o}
 INCLUDES		=	-I.
 RM				=	rm -rf
 
+OS				=	${shell uname -s}
+
 NOCOLOR			=	\033[0m
 COLOR_LGREEN	=	\033[92m
 COLOR_LYELLOW	=	\033[93m
@@ -41,7 +43,7 @@ all			:	$(NAME)
 bonus		:	$(NAME_B)
 debug		:	$(NAME_D)
 
-.PHONY		:	all bonus debug clean fclean re
+.PHONY		:	all bonus debug clean fclean re norm
 
 $(NAME) 	:	$(OBJS)
 				@$(AR) $(LIB_FLAGS) $(NAME) $?
@@ -77,3 +79,8 @@ fclean		:	clean
 re			:	fclean $(NAME)
 				@printf "$(COLOR_LCYAN)$@$(NOCOLOR) [$(COLOR_LGREEN)info$(NOCOLOR)]: "
 				@printf "ready $(COLOR_LYELLOW)$(NAME)$(NOCOLOR)$(NEWLINE)"
+
+norm		:
+				@norminette $(SRCS) $(HEADERS)
+				@printf "$(COLOR_LCYAN)norminette$(NOCOLOR) [$(COLOR_LGREEN)info$(NOCOLOR)]: "
+				@printf "ready for $(COLOR_LYELLOW)$(OS)$(NOCOLOR)$(NEWLINE)"
