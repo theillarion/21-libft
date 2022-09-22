@@ -1,6 +1,7 @@
-NAME			=	libft.a
-NAME_B			=	libft_bonus.a
-NAME_D			=	libft_debug.a
+NAME_S			=	libft
+NAME			=	$(NAME_S).a
+NAME_B			=	$(NAME_S)_bonus.a
+NAME_D			=	$(NAME_S)_debug.a
 CC				=	gcc
 CC_FLAGS		=	-Wall -Werror -Wextra
 CC_FLAGS_D		=	-g
@@ -64,20 +65,20 @@ $(NAME_D)	:	$(OBJS_D) $(OBJS_B_D)
 clean		:
 				@${RM} $(OBJS) $(OBJS_B) $(OBJS_D) $(OBJS_B_D)
 				@printf "$(COLOR_LCYAN)$@$(NOCOLOR) [$(COLOR_LGREEN)info$(NOCOLOR)]: "
-				@printf "ready for $(COLOR_LYELLOW)$(OS)$(NOCOLOR)$(NEWLINE)"
+				@printf "ready $(COLOR_LYELLOW)$(NAME_S)$(NOCOLOR) for $(COLOR_LYELLOW)$(OS)$(NOCOLOR)$(NEWLINE)"
 
 
 fclean		:	clean
 				@${RM} $(NAME) $(NAME_B)
 				@printf "$(COLOR_LCYAN)full clean$(NOCOLOR) [$(COLOR_LGREEN)info$(NOCOLOR)]: "
-				@printf "ready for $(COLOR_LYELLOW)$(OS)$(NOCOLOR)$(NEWLINE)"
+				@printf "ready $(COLOR_LYELLOW)$(NAME_S)$(NOCOLOR) for $(COLOR_LYELLOW)$(OS)$(NOCOLOR)$(NEWLINE)"
 
 
 re			:	fclean $(NAME)
 				@printf "$(COLOR_LCYAN)rebuild$(NOCOLOR) [$(COLOR_LGREEN)info$(NOCOLOR)]: "
-				@printf "ready for $(COLOR_LYELLOW)$(OS)$(NOCOLOR)$(NEWLINE)"
+				@printf "ready $(COLOR_LYELLOW)$(NAME_S)$(NOCOLOR) for $(COLOR_LYELLOW)$(OS)$(NOCOLOR)$(NEWLINE)"
 
 norm		:
 				@norminette $(SRCS) $(HEADERS)
 				@printf "$(COLOR_LCYAN)norminette$(NOCOLOR) [$(COLOR_LGREEN)info$(NOCOLOR)]: "
-				@printf "ready for $(COLOR_LYELLOW)$(OS)$(NOCOLOR)$(NEWLINE)"
+				@printf "ready $(COLOR_LYELLOW)$(NAME_S)$(NOCOLOR) for $(COLOR_LYELLOW)$(OS)$(NOCOLOR)$(NEWLINE)"
