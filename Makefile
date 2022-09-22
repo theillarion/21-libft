@@ -69,7 +69,7 @@ clean		:
 
 
 fclean		:	clean
-				@${RM} $(NAME) $(NAME_B)
+				@${RM} $(NAME) $(NAME_D) $(NAME_B)
 				@printf "$(COLOR_LCYAN)full clean$(NOCOLOR) [$(COLOR_LGREEN)info$(NOCOLOR)]: "
 				@printf "ready $(COLOR_LYELLOW)$(NAME_S)$(NOCOLOR) for $(COLOR_LYELLOW)$(OS)$(NOCOLOR)$(NEWLINE)"
 
