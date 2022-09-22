@@ -6,7 +6,7 @@
 /*   By: illarion <glashli@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 12:16:05 by glashli           #+#    #+#             */
-/*   Updated: 2022/09/22 21:21:43 by illarion         ###   ########.fr       */
+/*   Updated: 2022/09/22 22:41:36 by illarion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,9 @@ static char	**ft_get_strs(const char	*str, size_t count, char symbol,
 		j = i;
 		while (str[j] && str[j] != symbol)
 			j++;
-		strs[k] = (char *)malloc((j - i + 1) * sizeof(char));
+		strs[k] = ft_substr(str + i, 0, j - i);
 		if (strs[k] == NULL)
 			return (strs);
-		strs[k] = ft_substr(str + i, 0, j - i);
 		i = ft_skip_symbol(str, symbol, j + 1, is_empty_line);
 	}
 	if (strs)
