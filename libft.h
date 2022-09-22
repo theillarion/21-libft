@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: glashli <glashli@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: illarion <glashli@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 11:39:06 by illarion          #+#    #+#             */
-/*   Updated: 2021/10/10 22:11:33 by glashli          ###   ########.fr       */
+/*   Updated: 2022/09/22 21:18:52 by illarion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stddef.h>
 # include <stdlib.h>
+# include <stdbool.h>
 # include <unistd.h>
 
 typedef unsigned char	t_uchar;
@@ -40,6 +41,7 @@ char	*ft_strdup(const char	*str);
 char	*ft_substr(const char	*str, unsigned int start, size_t	len);
 
 char	**ft_split(const char	*str, char symbol);
+char	**ft_smart_split(const char *str, char symbol, bool is_empty_line);
 
 int		ft_tolower(int symbol);
 int		ft_toupper(int symbol);
