@@ -6,7 +6,7 @@
 /*   By: illarion <glashli@student.21-school.ru>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 11:39:06 by illarion          #+#    #+#             */
-/*   Updated: 2022/09/22 21:18:52 by illarion         ###   ########.fr       */
+/*   Updated: 2022/10/22 16:44:38 by illarion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ int		ft_atoi(const char	*str);
 char	*ft_itoa(int number);
 
 void	ft_putchar_fd(char symbol, int fd);
-void	ft_putstr_fd(char	*str, int fd);
-void	ft_putendl_fd(char	*str, int fd);
+void	ft_putstr_fd(const char	*str, int fd);
+void	ft_putendl_fd(const char	*str, int fd);
 void	ft_putnbr_fd(int number, int fd);
 
 int		ft_lstsize(t_list	*lst);
